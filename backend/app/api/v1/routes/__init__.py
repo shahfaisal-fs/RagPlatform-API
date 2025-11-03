@@ -1,9 +1,12 @@
+# app/api/v1/routes/api_router.py
+
 from fastapi import APIRouter
-from app.api.v1.routes import documents, pipelines, embeddings, chunks
+from app.api.v1.routes.project_api import router as project_router
+from app.api.v1.routes.ingest_api import router as ingest_router
+from app.api.v1.routes.chat_api import router as chat_router
 
 api_router = APIRouter()
 
-api_router.include_router(documents.router, prefix="/documents", tags=["documents"])
-api_router.include_router(pipelines.router, prefix="/pipelines", tags=["pipelines"])
-api_router.include_router(embeddings.router, prefix="/embeddings", tags=["embeddings"])
-api_router.include_router(chunks.router, prefix="/chunks", tags=["chunks"])
+api_router.include_router(project_router, prefix="/projects", tags=["projects"])
+api_router.include_router(ingest_router, prefix="/ingest", tags=["ingest"])
+api_router.include_router(chat_router, prefix="/chat", tags=["chat"])
