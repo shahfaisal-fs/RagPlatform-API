@@ -1,3 +1,4 @@
+'''
 import os
 from azure.core.credentials import AzureKeyCredential
 from azure.search.documents import SearchClient
@@ -49,3 +50,5 @@ except Exception as e:
 # from azure.search.documents.indexes import SearchIndexClient
 # and an Admin API key.
 # This example focuses on document search using SearchClient.
+
+'''
